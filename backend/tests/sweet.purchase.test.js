@@ -1,7 +1,7 @@
 import request from 'supertest';
 import app from '../app.js';
 import mongoose from 'mongoose';
-import Sweet from '../models/sweetModel.js';
+import Sweet from '../models/sweet.model.js';
 
 beforeAll(async () => {
   await mongoose.connect(process.env.MONGO_URI);
