@@ -1,8 +1,8 @@
 import express from 'express';
-import { createSweet,deleteSweet } from '../controllers/sweet.controller.js';
+import { getAllSweets, createSweet,deleteSweet } from '../controllers/sweet.controller.js';
 
 const router = express.Router();
-
+router.get('/', getAllSweets);
 router.post('/', createSweet);
 router.delete('/:id', deleteSweet);
 

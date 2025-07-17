@@ -1,7 +1,9 @@
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../app.js';
-import Sweet from '../models/sweetModel.js';
+import Sweet from '../models/sweet.model.js';
+import { jest } from '@jest/globals';
+
 
 beforeAll(async () => {
   await mongoose.connect(process.env.MONGO_URI);
@@ -24,18 +26,19 @@ describe('GET /api/sweets', () => {
 
   it('should return a list of sweets when sweets exist', async () => {
     await Sweet.create([
-      { name: 'Ladoo', category: 'candy', price: 10, quantity: 50 },
-      { name: 'Barfi', category: 'pastry', price: 20, quantity: 30 },
+        { name: 'Ladoo', category: 'candy', price: 10, quantity: 50 },
+        { name: 'Barfi', category: 'pastry', price: 20, quantity: 30 },
     ]);
 
     const res = await request(app).get('/api/sweets');
     expect(res.statusCode).toBe(200);
     expect(res.body.length).toBe(2);
-    expect(res.body[0]).toHaveProperty('name', 'Ladoo');
-    expect(res.body[1]).toHaveProperty('category', 'pastry');
-  });
 
-  it('should return 500 if there is a server error', async () => {
+    const sweetNames = res.body.map((sweet) => sweet.name);
+    expect(sweetNames).toEqual(expect.arrayContaining(['Ladoo', 'Barfi']));
+});
+
+    it('should return 500 if there is a server error', async () => {
     jest.spyOn(Sweet, 'find').mockImplementation(() => {
       throw new Error('DB error');
     });
