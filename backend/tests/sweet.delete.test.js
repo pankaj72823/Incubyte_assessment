@@ -8,13 +8,11 @@ describe('DELETE /api/sweets/:id', () => {
   let sweetId;
 
   beforeAll(async () => {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGO_URI);
   });
 
   beforeEach(async () => {
+    await Sweet.deleteMany({});
     const sweet = await Sweet.create({ name: 'Kaju Katli', price: 120, quantity: 30 });
     sweetId = sweet._id.toString();
   });
