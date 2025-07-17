@@ -21,3 +21,7 @@ export const deleteSweet = async (id) => {
   const sweet = await Sweet.findByIdAndDelete(id);
   return sweet;
 };
+
+export const getAllSweets = async () => {
+  return await Sweet.find();
+};

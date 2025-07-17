@@ -35,9 +35,10 @@ export const deleteSweet = async (req, res) => {
 
 export const getAllSweets = async (req, res) => {
   try {
-    const sweets = await Sweet.find();
+    const sweets = await sweetService.getAllSweets();
     res.status(200).json(sweets);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch sweets' });
   }
 };
+
