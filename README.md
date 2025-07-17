@@ -60,12 +60,7 @@ Test Summary:
 >  **7 test suites, 0 failures**  
 >  Edge cases and error handling included
 
-Example:
-
-* **POST /api/sweets/:id/purchase**  
-  * Purchases sweet if stock is available  
-  * Returns 400 if quantity exceeds stock  
-  * Handles missing or invalid quantity  
+ 
 
 ---
 
@@ -102,7 +97,7 @@ sweet-shop-management/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/online-sweet-shop.git
+git clone https://github.com/pankaj72823/online-sweet-shop.git
 cd online-sweet-shop
 ```
 
