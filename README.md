@@ -52,7 +52,7 @@ TDD is at the **core of this project**. Tests were written first, guiding the im
 * Purchasing and restocking  
 * Validation and error handling  
 
-📄 **[View Full Test Report](https://drive.google.com/your-link)**
+📄 **[View Full Test Report](https://drive.google.com/file/d/1zMKCGtIwpqLwUJFJH1FMCEzqOhU6OOlF/view?usp=drive_link)**
 
 Test Summary:
 
