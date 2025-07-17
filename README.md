@@ -97,8 +97,7 @@ sweet-shop-management/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/pankaj72823/online-sweet-shop.git
-cd online-sweet-shop
+git clone https://github.com/pankaj72823/Incubyte_assessment.git
 ```
 
 ### 2. Backend Setup
