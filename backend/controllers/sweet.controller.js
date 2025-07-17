@@ -1,7 +1,6 @@
 import { addSweet } from '../services/sweet.service.js';
 import * as sweetService from '../services/sweet.service.js';
 import mongoose from 'mongoose'; 
-import Sweet from '../models/sweet.model.js';
 
 export const createSweet = async (req, res) => {
   try {
