@@ -1,7 +1,7 @@
 import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../app.js';
-import { Sweet } from '../models/sweet.model.js';
+import Sweet from '../models/sweet.model.js';
 
 describe('DELETE /api/sweets/:id', () => {
   let sweetId;
@@ -14,7 +14,7 @@ describe('DELETE /api/sweets/:id', () => {
   });
 
   beforeEach(async () => {
-    const sweet = await Sweet.create({ name: 'Kaju Katli', price: 120 });
+    const sweet = await Sweet.create({ name: 'Kaju Katli', price: 120, quantity: 30 });
     sweetId = sweet._id.toString();
   });
 
