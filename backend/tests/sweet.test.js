@@ -1,4 +1,3 @@
-// tests/sweet.test.js
 import request from 'supertest';
 import app from '../app.js';
 import mongoose from 'mongoose';
@@ -13,7 +12,7 @@ afterAll(async () => {
 });
 
 afterEach(async () => {
-  await Sweet.deleteMany(); 
+  await Sweet.deleteMany();
 });
 
 describe('POST /api/sweets', () => {
