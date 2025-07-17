@@ -2,6 +2,7 @@ import request from 'supertest';
 import mongoose from 'mongoose';
 import app from '../app.js';
 import Sweet from '../models/sweet.model.js';
+import { jest } from '@jest/globals';
 
 describe('DELETE /api/sweets/:id', () => {
   let sweetId;

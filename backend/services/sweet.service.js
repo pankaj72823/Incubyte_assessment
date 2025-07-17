@@ -1,4 +1,4 @@
-import Sweet from '../models/sweetModel.js';
+import Sweet from '../models/sweet.model.js';
 
 export const addSweet = async (data) => {
   if (!data.name || !data.price || !data.quantity) {
@@ -15,4 +15,9 @@ export const addSweet = async (data) => {
 
   const sweet = new Sweet(data);
   return await sweet.save();
+};
+
+export const deleteSweet = async (id) => {
+  const sweet = await Sweet.findByIdAndDelete(id);
+  return sweet;
 };

@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import sweetRoutes from './routes/sweetRoute.js';
+import sweetRoutes from './routes/sweet.route.js';
 
 dotenv.config();
 const app = express();
