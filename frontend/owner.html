@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights - Owner Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/owner.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sweet Delights</h1>
+            <nav>
+                <a href="index.html" class="btn">Back to Home</a>
+            </nav>
+        </header>
+        <main>
+            <section class="inventory-section">
+                <h2>Inventory Management</h2>
+                <div class="controls">
+                    <button id="showAddForm" class="btn">Add New Sweet</button>
+                    <div class="search-sort">
+                        <input type="text" id="searchInput" placeholder="Search sweets...">
+                        <select id="sortSelect">
+                            <option value="">Sort by...</option>
+                            <option value="name">Name (A-Z)</option>
+                            <option value="-name">Name (Z-A)</option>
+                            <option value="price">Price (Low-High)</option>
+                            <option value="-price">Price (High-Low)</option>
+                            <option value="quantity">Quantity (Low-High)</option>
+                            <option value="-quantity">Quantity (High-Low)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="addForm" class="form-container hidden">
+                    <h3>Add New Sweet</h3>
+                    <form id="addSweetForm">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <input type="text" id="category">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Initial Quantity:</label>
+                            <input type="number" id="quantity" min="0" required>
+                        </div>
+                        <button type="submit" class="btn">Add Sweet</button>
+                        <button type="button" id="cancelAdd" class="btn cancel-btn">Cancel</button>
+                    </form>
+                </div>
+                
+                <div id="sweetsList" class="sweets-grid">
+                    <!-- Sweets will be loaded here dynamically -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Sweet Delights. All rights reserved.</p>
+        </footer>
+    </div>
+    <script type="module"  src="scripts/api.js"></script>
+    <script type="module" src="scripts/owner.js"></script>
+</body>
+</html>
